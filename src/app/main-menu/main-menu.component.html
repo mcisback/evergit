@@ -1,0 +1,10 @@
+<div class="navbar-menu navbar-vertical">
+  <a *ngFor="let note of allNotes" class="navbar-item">
+    {{note.title}}
+  </a>
+
+  <ng-container *ngIf="!allNotes">
+    No Notes, create new one ?
+  </ng-container>
+</div>
+

@@ -2,41 +2,23 @@
 <div class="container main_container">
 
   <aside class="menu left_sidebar">
-    <!--<p class="menu-label">
-        Notes
-    </p>
-    <p class="menu-label">
-      Notes
-    </p>
-    <ul class="menu-list">
-      <li><a>Note#1</a></li>
-      <li><a>Note#2</a></li>
-    </ul>-->
     <nav id="main_nav" class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item gitever_logo" href="https://localhost">
-          <img src="../assets/logo.svg" alt="GitBased Evernote">
+        <a class="navbar-item gitever_logo" href="https://localhost:4200">
+          <img src="../../assets/logo.svg" alt="GitBased Evernote" style="width: 100%">
         </a>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <a role="button" class="navbar-burger is-mobile" aria-label="menu" aria-expanded="false">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
 
-      <div class="navbar-menu">
-        <a class="navbar-item">
-          Note
-        </a>
-        <a class="navbar-item">
-          Note
-        </a>
-        <a class="navbar-item">
-          Note
-        </a>
-      </div>
+      <app-main-menu></app-main-menu>
+
     </nav>
+
   </aside>
 
   <div class="container right_container">
@@ -83,6 +65,8 @@
     </div>
 
   </div>
+
+  <app-main-progress-bar></app-main-progress-bar>
 
 </div>
 

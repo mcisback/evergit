@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MainMenuComponent } from './main-menu/main-menu.component';
+import { MainProgressBarComponent } from './main-progress-bar/main-progress-bar.component';
 
 @Component({
   selector: 'app-root',
