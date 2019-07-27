@@ -1,0 +1,13 @@
+<div class="tile is-ancestor">
+  <div class="tile is-vertical">
+    <div *ngFor="let note of notes | derp" class="tile is-parent notebox">
+      <article class="tile is-child box">
+        <p class="title">{{note.title}}</p>
+        <p class="subtitle">{{note.subtitle}}</p>
+        <div class="content">
+          <p>{{note.content}}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

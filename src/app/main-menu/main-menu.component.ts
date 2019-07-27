@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
 
 import { AppBackendApi } from '../app-backend-api';
@@ -10,13 +11,13 @@ import { AppBackendApi } from '../app-backend-api';
 })
 export class MainMenuComponent implements OnInit {
 
-  protected notes: any;
   protected api: AppBackendApi;
-  protected allNotes: any;
+  protected notes: Array<any>;
 
   constructor(private  httpClient: HttpClient) {
 
     this.api = new AppBackendApi(httpClient);
+    this.notes = [];
 
     this.loadNotes();
   }
@@ -24,9 +25,28 @@ export class MainMenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  loadNote(id: number) {
+    console.log('Loading note with id: ', id);
+
+    /*
+    this.api.getNote(id)
+      .subscribe(data => {
+        console.log('Note data: ', data);
+      });
+    */
+  }
+
   loadNotes() {
 
-    this.allNotes = this.api.getNotes();
+    this.api.getNotes()
+      .subscribe(data => {
+        console.log('Notes: ', data[`notes`]);
+        console.log('typeof Notes: ', typeof data);
+
+        this.notes = data[`notes`].note;
+
+        console.log('this.notes: ', this.notes);
+      });
 
   }
 

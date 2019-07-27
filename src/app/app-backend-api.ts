@@ -12,12 +12,12 @@ export class AppBackendApi {
 
   getNotes() {
 
-    this.httpClient.get(this.apiUrl + 'notes')
-      .subscribe(data => {
-        console.log('Notes: ', data);
+    return this.httpClient.get(this.apiUrl + 'notes');
 
-        return data;
-      });
+  }
+
+  getNote(id: number) {
+    return this.httpClient.get(this.apiUrl + 'note/' + id);
   }
 
 }

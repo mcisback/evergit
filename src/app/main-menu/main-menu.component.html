@@ -1,9 +1,12 @@
+<a class="navbar-item" routerLink="/edit/new">
+  <span class="button is-primary">Create New Note</span>
+</a>
 <div class="navbar-menu navbar-vertical">
-  <a *ngFor="let note of allNotes" class="navbar-item">
-    {{note.title}}
+  <a *ngFor="let note of notes | derp" class="navbar-item" routerLink="/edit/{{note.id}}">
+    T: {{note.title}}
   </a>
 
-  <ng-container *ngIf="!allNotes">
+  <ng-container *ngIf="!notes">
     No Notes, create new one ?
   </ng-container>
 </div>

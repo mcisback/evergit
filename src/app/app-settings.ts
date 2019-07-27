@@ -9,6 +9,12 @@ export class AppSettings {
 
     if (this.ENV === 'dev') {
       this.API_ENDPOINT = 'http://localhost:8000/';
+    } else {
+
+      if (this.ENV === 'prod') {
+        this.API_ENDPOINT = 'http://localhost:8000/';
+      }
+
     }
 
   }

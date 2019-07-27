@@ -1,0 +1,72 @@
+<div id="note_editor" class="field" *ngIf="note">
+
+  <h1 class="title">Edit Note #{{note.id}}</h1>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label">Title</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <p class="control">
+          <input class="input" type="text" placeholder="Title" value="{{note.title}}">
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label">SubTitle</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <p class="control">
+          <input class="input" type="text" placeholder="Title" value="{{note.subtitle}}">
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Location</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
+            <input class="input" type="text" placeholder="Location" value="{{note.parent}}">
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="field is-horizontal" *ngIf="note.tags">
+    <div class="field-label is-normal">
+      <label class="label">Tags</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <p class="control">
+          <span *ngFor="let t of note.tags.tag">
+            #{{t}}&nbsp;
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="control">
+    <textarea class="textarea is-large" placeholder="Note Content">{{note.content}}</textarea>
+  </div>
+
+
+  <div class="buttons save_buttons">
+    <span class="button is-primary">Save</span>
+    <span class="button is-warning">Delete Note</span>
+  </div>
+</div>
+
+<div *ngIf="!note">
+  <h1>Note is Not Presente, create new one ?</h1>
+</div>
